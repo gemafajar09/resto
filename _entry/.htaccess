@@ -1,0 +1,16 @@
+#Untuk Menyembunyikan isi Directory Web
+Options All -Indexes
+
+#Untuk Mengarahkan Notifikasi Error 404 (NOT FOUND)
+#ErrorDocument 404 http://localhost/goresto/_entry
+
+#Untuk Memberi Notifikasi Error 403 (ACCESS FORBIDEN)
+#ErrorDocument 403 http://localhost/goresto/
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+ErrorDocument 404 /goresto/404.php
+</IfModule>

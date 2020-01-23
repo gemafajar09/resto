@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+ErrorDocument 404 /goresto/_entry/_Admin/404.php
+ErrorDocument 404 /goresto/_entry/_Waiter/404.php
+ErrorDocument 404 /goresto/_entry/_Kasir/404.php
+ErrorDocument 404 /goresto/_entry/_Owner/404.php
+</IfModule>
